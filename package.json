@@ -1,0 +1,17 @@
+{
+  "name": "qa-lead-assignment",
+  "version": "1.0.0",
+  "description": "QA Lead Assignment – UI & API Test Automation with Playwright",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test tests/ui/",
+    "test:api": "npx playwright test tests/api/",
+    "test:headed": "npx playwright test --headed",
+    "test:report": "npx playwright show-report",
+    "test:debug": "npx playwright test --debug"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "@types/node": "^22.0.0"
+  }
+}
