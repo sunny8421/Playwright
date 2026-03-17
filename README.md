@@ -40,12 +40,15 @@ qa-lead-assignment/
 
 ## Prerequisites
 
-| Requirement | Version |
-|-------------|---------|
-| **Node.js** | ≥ 18.x |
-| **npm** | ≥ 9.x |
+| Requirement | Version | How to check |
+|-------------|---------|-------------|
+| **Node.js** | ≥ 18.x | `node --version` |
+| **npm** | ≥ 9.x | `npm --version` |
+| **Git** | Any recent version | `git --version` |
+| **Code Editor** | VS Code (recommended) or any editor | — |
+| **OS** | Windows / macOS / Linux | — |
 
-> **Note:** No local server is needed – all tests run against the deployed application at `https://v0-lead-manager-app.vercel.app`.
+> **Note:** No local server, database, or environment variables are needed – all tests run against the deployed application at `https://v0-lead-manager-app.vercel.app`.
 
 ---
 
@@ -53,15 +56,17 @@ qa-lead-assignment/
 
 ```bash
 # 1. Clone the repository
-git clone <repository-url>
-cd qa-lead-assignment
+git clone https://github.com/sunny8421/Playwright.git
+cd Playwright
 
-# 2. Install dependencies
+# 2. Install project dependencies
 npm install
 
-# 3. Install Playwright browsers (first time only)
+# 3. Install Playwright browser engine (Chromium – required for UI tests)
 npx playwright install --with-deps chromium
 ```
+
+That's it — you're ready to run tests.
 
 ---
 
@@ -109,12 +114,21 @@ The report opens in your browser and shows results for every test, with screensh
 
 ## Tools & Frameworks Used
 
-| Tool / Library | Purpose |
-|----------------|---------|
-| **Playwright** (`@playwright/test`) | UI browser automation & API request testing |
-| **TypeScript** | Type-safe test authoring |
-| **Page Object Model** | Clean separation between locators and test logic |
-| **Playwright HTML Reporter** | Interactive test report with traces, screenshots, and videos |
+| Tool / Library | Version | Purpose |
+|----------------|---------|---------||
+| **Playwright** (`@playwright/test`) | ^1.50.0 | UI browser automation & API request testing |
+| **Chromium** (via Playwright) | Auto-managed | Browser engine used for UI tests (downloaded by `npx playwright install`) |
+| **TypeScript** | Via `@types/node ^22.0.0` | Type-safe test authoring |
+| **Node.js** | ≥ 18.x | JavaScript runtime |
+| **Page Object Model** | — | Design pattern for clean separation between locators and test logic |
+| **Playwright HTML Reporter** | Built-in | Interactive test report with traces, screenshots, and videos |
+
+### Key npm packages (from `package.json`)
+
+```
+@playwright/test  – Test runner, assertions, browser & API automation
+@types/node       – TypeScript type definitions for Node.js
+```
 
 ---
 
