@@ -108,7 +108,7 @@ npm run test:debug
 npm run test:report
 ```
 
-The report opens in your browser and shows results for every test, with screenshots and traces for failures.
+The report will be served at **http://localhost:9323** — open this URL in your browser to view detailed results for every test, including screenshots and traces for failures.
 
 ---
 
